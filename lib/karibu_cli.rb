@@ -27,7 +27,7 @@ module KaribuCli
   end
 
   def self.call(service, payload)
-    raise "Start client before request anywhere in your initialization process: << KaribuCli.start! >>"
+    raise "Start client before request anywhere in your initialization process: << KaribuCli.start! >>" if @client.nil?
     resp = @client.call(service, payload)
     Future.get(resp)
   end
