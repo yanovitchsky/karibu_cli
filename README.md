@@ -33,6 +33,12 @@ end
 ```
 
 ## Usage
+Before calling your service
+```ruby
+KaribuCli.start!
+```
+The command will initialize all threads and register your services.
+
 You can now call your service with the classes exposed and their arguments
 ```ruby
 KaribuCli.call(:test_app, ['Dummy', 'say', ['hola']])
