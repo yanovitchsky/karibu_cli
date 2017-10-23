@@ -45,7 +45,7 @@ module KaribuCli
     def self.get(concurrent_future)
       val = concurrent_future.value
       if val.nil?
-        raise concurrent_future.reason
+        raise concurrent_future.reason.inspect
       else
         if val.result.nil?
           raise val.error
